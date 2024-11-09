@@ -1,0 +1,16 @@
+name: 'CONTENEDOR_CHIQUITO'
+
+services:
+  db:
+    image: postgres:15.3
+    restart: always
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: STRYKER
+      POSTGRES_PASSWORD: STRYKER237
+      POSTGRES_DB: 'bd-ltd'
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
